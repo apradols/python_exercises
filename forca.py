@@ -9,7 +9,10 @@ def jogo():
     while(not enforcou and not acertou):
 
         chute = input('Digite uma letra:')
+        chute = chute.strip()
         
+
+
         posicao = 0
         for letra in palavra:
             if(chute == letra):
@@ -22,3 +25,5 @@ def jogo():
 
 if(__name__ == "__main__"):
     jogo()
+
+    #01:23
