@@ -6,6 +6,7 @@ def jogo():
 
     enforcou = False
     acertou = False
+    erro = 0
 
     print(letras_certas)
 
@@ -14,11 +15,17 @@ def jogo():
         chute = input('Digite uma letra:')
         chute = chute.strip()
 
-        posicao = 0
-        for letra in palavra:
-            if(chute.upper() == letra.upper()):
-               letras_certas[posicao] = letra
-            posicao = posicao + 1
+        if(chute in palavra):
+            posicao = 0
+            for letra in palavra:
+                if(chute.upper() == letra.upper()):
+                    letras_certas[posicao] = letra
+                posicao = posicao + 1
+
+        else:
+            erro = erro + 1
+
+        enforcou = erro == 5
 
         print(letras_certas)    
         #print('jogando...')
@@ -27,5 +34,3 @@ def jogo():
 
 if(__name__ == "__main__"):
     jogo()
-
-    #01:23
