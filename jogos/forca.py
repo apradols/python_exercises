@@ -1,8 +1,12 @@
-def jogo():
-    print('Bem-vindo ao jogo de forca!')
+import random
 
-    palavra = 'nana'.upper()
-    letras_certas = ['_', '_', '_', '_']
+def jogo():
+
+    print_inicio()
+
+    palavra = palavra_secreta_random()
+
+    letras_certas = ['_' for letra in palavra]
 
     enforcou = False
     acertou = False
@@ -27,13 +31,31 @@ def jogo():
 
         enforcou = erro == 5
         acertou = '_' not in letras_certas
-        print(letras_certas)    
-        
+        print(letras_certas)
+
     if(acertou):
         print("Você ganhou")
     else:
         print('Você perdeu')
     print('Fim de jogo!!!')
 
+
 if(__name__ == "__main__"):
     jogo()
+
+def print_inicio():
+    print('Bem-vindo ao jogo de forca!')
+
+def palavra_secreta_random():
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    num = random.randrange(0, len(palavras))
+    palavra = palavras[num].upper()
+    return palavra
