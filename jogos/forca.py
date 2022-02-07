@@ -23,8 +23,9 @@ def jogo():
                 posicao += 1
         else:
             erro += 1
+            desenha_forca(erro)
 
-        enforcou = erro == 5
+        enforcou = erro == 7
         acertou = '_' not in letras_certas
         print(letras_certas)
 
@@ -63,6 +64,57 @@ def print_perdeu(palavra):
     print('A palavra secreta era:', palavra)
     print('Fim de jogo!!!')
         
+def desenha_forca(erro):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(erro == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erro == 2):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erro == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erro == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erro == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(erro == 6):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (erro == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
+
 if(__name__ == "__main__"):
     jogo()
 
