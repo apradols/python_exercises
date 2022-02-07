@@ -4,19 +4,16 @@ def jogo():
 
     print_inicio()
     palavra = palavra_secreta_random()
-
     letras_certas = ['_' for letra in palavra]
+    print(letras_certas)
 
     enforcou = False
     acertou = False
     erro = 0
 
-    print(letras_certas)
-
     while(not enforcou and not acertou):
 
-        chute = input('Digite uma letra:')
-        chute = chute.strip().upper()
+        chute = pedir_chute()
 
         if(chute in palavra):
             posicao = 0
@@ -24,7 +21,6 @@ def jogo():
                 if(chute == letra):
                     letras_certas[posicao] = letra
                 posicao += 1
-
         else:
             erro += 1
 
@@ -33,10 +29,10 @@ def jogo():
         print(letras_certas)
 
     if(acertou):
-        print("Você ganhou")
+        print_acerto()
     else:
-        print('Você perdeu')
-    print('Fim de jogo!!!')
+        print_perdeu(palavra)
+        
 
 def print_inicio():
     print('Bem-vindo ao jogo de forca!')
@@ -55,5 +51,24 @@ def palavra_secreta_random():
     palavra = palavras[num].upper()
     return palavra
 
+def pedir_chute():
+    chute = input('Digite uma letra:')
+    chute = chute.strip().upper()
+    return chute
+
+def print_acerto():
+    print("Você ganhou")
+
+def print_perdeu(palavra):
+    print('Você perdeu')
+    print('A palavra secreta era:', palavra)
+    print('Fim de jogo!!!')
+        
+
+
+
+
 if(__name__ == "__main__"):
     jogo()
+
+#25:36
