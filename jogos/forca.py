@@ -118,4 +118,4 @@ def desenha_forca(erro):
 if(__name__ == "__main__"):
     jogo()
 
-#25:36
+#43:57
