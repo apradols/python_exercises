@@ -33,7 +33,6 @@ def jogo():
     else:
         print_perdeu(palavra)
         
-
 def print_inicio():
     print('Bem-vindo ao jogo de forca!')
 
@@ -64,10 +63,6 @@ def print_perdeu(palavra):
     print('A palavra secreta era:', palavra)
     print('Fim de jogo!!!')
         
-
-
-
-
 if(__name__ == "__main__"):
     jogo()
 
