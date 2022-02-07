@@ -59,3 +59,4 @@ def palavra_secreta_random():
     num = random.randrange(0, len(palavras))
     palavra = palavras[num].upper()
     return palavra
+    
