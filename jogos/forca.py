@@ -3,7 +3,6 @@ import random
 def jogo():
 
     print_inicio()
-
     palavra = palavra_secreta_random()
 
     letras_certas = ['_' for letra in palavra]
@@ -39,10 +38,6 @@ def jogo():
         print('Você perdeu')
     print('Fim de jogo!!!')
 
-
-if(__name__ == "__main__"):
-    jogo()
-
 def print_inicio():
     print('Bem-vindo ao jogo de forca!')
 
@@ -59,4 +54,6 @@ def palavra_secreta_random():
     num = random.randrange(0, len(palavras))
     palavra = palavras[num].upper()
     return palavra
-    
+
+if(__name__ == "__main__"):
+    jogo()
