@@ -2,13 +2,14 @@
 
 class Conta:
 
+    #atributos
     def __init__(self, numero, titular, saldo, limite):
-        print("Construindo objeto... {}" .format(self))
         self.__numero = numero
         self.__titular = titular
         self.__saldo = saldo
         self.__limite = limite
 
+    #metodos
     def extrato(self):
         print("O seu saldo é de {}" .format(self.__saldo))
 
@@ -31,6 +32,7 @@ class Conta:
         self.sacar(valor)
         conta_destino.depositar(valor)
 
+    #porpriedade
     @property
     def saldo(self):
         return self.__saldo
@@ -46,7 +48,8 @@ class Conta:
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
-
+   
+    #metodos estaticos 
     @staticmethod
     def cod_banco():
         return "001"
