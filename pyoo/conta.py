@@ -8,7 +8,6 @@ class Conta:
         self.__titular = titular
         self.__saldo = saldo
         self.__limite = limite
-        self.__cod_banco = "001"
 
     def extrato(self):
         print("O seu saldo é de {}" .format(self.__saldo))
@@ -48,6 +47,10 @@ class Conta:
     def limite(self, limite):
         self.__limite = limite
 
-    @property
-    def cod_banco(self):
-        return self.__cod_banco
+    @staticmethod
+    def cod_banco():
+        return "001"
+
+    @staticmethod
+    def cod_bancos():
+        return {"BB":"001", "Caixa":"104", "Bradesco":"237"}
