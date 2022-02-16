@@ -32,7 +32,7 @@ class Conta:
         self.sacar(valor)
         conta_destino.depositar(valor)
 
-    #porpriedade
+    #propriedade
     @property
     def saldo(self):
         return self.__saldo
